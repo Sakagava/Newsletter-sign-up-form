@@ -1,0 +1,156 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    color: #232742; 
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 2vh;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    height: 90vh;
+    margin-left: 15vw;
+    margin-top: 4.5vh;
+    background-color: #36384d;
+    box-shadow: 0px 0px 2em #23274271;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+    width: 50vw;
+    height: 65vh;
+    border-radius: 2em;
+    background-color: white;
+}
+
+.leftSide {
+    width: 24.8vw;
+    margin-left: 4vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* @media screen and (min-width: 1920px) {
+    .leftSide {
+        width: 40vw;
+    }
+
+    .text h1 {
+        font-size: 4em;
+    }
+
+    .text p {
+        font-size: 1.3em;
+    }
+
+    .textItem {
+        font-size: 1em;
+    }
+    
+    button {
+        font-size: 2em;
+    }
+} */
+
+.text {
+    width: 21vw;
+    font-size: 1em;
+}
+
+table {
+    display: flex;
+    align-content: space-around;
+    margin-top: 2vh;
+}
+
+tr {
+    height: 4vh;
+}
+
+.iconSuccess {
+    width: 1vw;
+    object-fit: cover;
+    margin-right: 1vw;
+}
+
+form {
+    margin-top: 3vh;
+}
+
+form input {
+    color: #bfbfbf;
+    border: 0.1em solid #bfbfbf;
+    border-radius: 0.6em;
+    padding-left: 0.8vw;
+    height: 5vh;
+    width: 20.1vw;
+    margin-top: 1vh;
+    margin-bottom: 2.5vh;
+}
+
+.textOutEmailInput {
+    display: flex;
+    justify-content: space-between;
+    width: 21vw;
+}
+
+button {
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    width: 21vw;
+    height: 5vh;
+    font-size: 0.8em;
+    color:aliceblue;
+    background: #35384b;
+    border: none;
+    border-radius: 0.6em;
+}
+
+button:hover {
+    background: linear-gradient(270deg, rgba(250,105,61,1) 0%, rgba(255,83,125,1) 100%);
+    box-shadow: 0px 0px 1em rgba(255, 83, 126, 0.5);
+}
+
+.rightSide {
+    height: 60vh;
+    margin-top: 2.5vh;
+    overflow: hidden;
+    border-radius: 1em;
+}
+
+#rightPanelImg {
+    width: 19.8vw;
+    height: 61vh;
+    object-fit:cover;
+}
+
+.successfulSubscription {
+    visibility: hidden;
+    display: none;
+    flex-flow: column;
+    align-items: center;
+    width: 25vw;
+    height: 47vh;
+    border-radius: 25px;
+    background-color: #ffffff;
+}
+
+.textAfterNewsletterForm {
+    width: 20vw;
+    margin-left: 0.9vw;
+    margin-top: 4vh;
+    padding-bottom: 3vh;
+}
