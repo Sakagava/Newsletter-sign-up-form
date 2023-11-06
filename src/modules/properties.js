@@ -1,6 +1,6 @@
 const errorStyleList = {
     color: 'red',
-    borderColor: 'red',
+    borderColor: 'tomato',
     background: '#ff000027',
 };
 const doneStyleList = {
@@ -8,5 +8,6 @@ const doneStyleList = {
     borderColor: '#bfbfbf',
     background: 'none',
 };
+const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
 
-export {errorStyleList, doneStyleList}
+export {errorStyleList, doneStyleList, EMAIL_REGEXP}

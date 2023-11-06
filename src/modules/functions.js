@@ -1,7 +1,7 @@
 import '../index.html';
 import "../index.css";
-import {errorStyleList, doneStyleList} from './properties'
-import {form, email, rightSide, errorText, buttonSending, successfulSubscription, dismissButton} from './variables'
+import {errorStyleList, doneStyleList, EMAIL_REGEXP} from './properties'
+import {form, email, imgSide, errorText, buttonSending, successfulSubscription, dismissButton} from './variables'
 
 function defaultEmail (elem, text) {
     if (elem.value == '') {
@@ -10,7 +10,7 @@ function defaultEmail (elem, text) {
         return;
     }
 
-    if (!elem.value.includes('@')) {
+    if (!isEmailValid(email.value)) {
         errorEmail (elem, text)
         return;
     }
@@ -52,4 +52,7 @@ function subscribtionWindow (elemClose, elemOpen) {
     elemOpen.style.display = 'flex';
 }
 
-export {defaultEmail, focusEmail, blurEmail, doneEmail, errorEmail, subscribtionWindow}
+function isEmailValid(value) {
+    return EMAIL_REGEXP.test(value);
+}
+export {defaultEmail, focusEmail, blurEmail, doneEmail, errorEmail, subscribtionWindow, isEmailValid}
