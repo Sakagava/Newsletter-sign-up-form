@@ -1,11 +1,12 @@
 import './index.html';
 import "./index.css";
 
-import {form, email, imgSide, errorText, buttonSending, successfulSubscription, dismissButton} from './modules/variables'
-import {focusEmail, blurEmail, subscribtionWindow, isEmailValid} from './modules/functions'
+import {form, email, imgSide, errorText, buttonSending, popup, dismissButton} from './modules/variables'
+import {focusEmail, blurEmail, subscribtionPopup, isEmailValid} from './modules/functions'
+
 
 email.onfocus = function (e) {
-    focusEmail(e, errorText)
+    focusEmail(email, errorText)
 }
 
 email.onblur = function () {
@@ -19,10 +20,11 @@ buttonSending.onclick = function (e) {
         return;
     }
     enteredEmail.firstChild.data = email.value;
-    subscribtionWindow(form, successfulSubscription);
+    subscribtionPopup(form, popup);
 }
 
 buttonSending.onmouseover = function(e) {
+
     imgSide.style.borderRadius = 0;
     imgSide.style.transition = '0.5s'
 }
@@ -32,6 +34,6 @@ buttonSending.onmouseout = function(e) {
 }
 
 dismissButton.onclick = function () {
-    subscribtionWindow(successfulSubscription, form);
+    subscribtionPopup(popup, form);
     email.value = 'Enter your email address';
 }

@@ -1,7 +1,7 @@
 import '../index.html';
 import "../index.css";
 import {errorStyleList, doneStyleList, EMAIL_REGEXP} from './properties'
-import {form, email, imgSide, errorText, buttonSending, successfulSubscription, dismissButton} from './variables'
+import {form, email, imgSide, errorText, buttonSending, popup, dismissButton, popupCounter} from './variables'
 
 function defaultEmail (elem, text) {
     if (elem.value == '') {
@@ -45,14 +45,23 @@ function errorEmail (elem, text) {
     email.style.background = errorStyleList.background;  
 }
 
-function subscribtionWindow (elemClose, elemOpen) {
-    elemClose.style.visibility = 'hidden'
-    elemClose.style.display = 'none';
-    elemOpen.style.visibility = 'visible'
+function subscribtionPopup (elemClose, elemOpen) {
+    elemClose.style.transition = '0.5s';
+    elemOpen.style.transition = '0.5s';
+    elemClose.style.opacity = '60';
     elemOpen.style.display = 'flex';
+    elemClose.style.display = 'none';
+    elemOpen.style.opacity = '0';
+
+    setTimeout(() => {
+        elemClose.style.opacity = '0';
+        elemOpen.style.opacity = '100';
+    }, 100)
+    
+    
 }
 
 function isEmailValid(value) {
     return EMAIL_REGEXP.test(value);
 }
-export {defaultEmail, focusEmail, blurEmail, doneEmail, errorEmail, subscribtionWindow, isEmailValid}
+export {defaultEmail, focusEmail, blurEmail, doneEmail, errorEmail, subscribtionPopup, isEmailValid}
